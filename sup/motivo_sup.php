@@ -1,7 +1,9 @@
 <? 
 session_start();
 $varsesion = $_SESSION['usuario'];
-$conexion= mysqli_connect("localhost","root","root","obs_asitencia");
+$conexion = mysqli_connect("localhost","root","root","obs_asitencia");
+
+
 $rol = $_SESSION['id_rol'];
 $user = $varsesion;
 if($varsesion == null || $varsesion = ''){
@@ -26,30 +28,28 @@ $fecha = date('d-m-Y');
 <h1> Agregar Motivo </h1>
 
 <?  
+$data = "SELECT * FROM reporte WHERE id='$id'";
 
-$data = "SELECT * FROM reporte WHERE id='$id";
-$result = mysqli_query($conexion,$data);
+$array = mysqli_query($conexion,$data);
 
-while ($fila = mysqli_fetch_array($result)){
-
-echo $fila['id'];
-
-} 
+$filas = mysqli_fetch_array($array);
 ?>
 
 
 
 <form class="row g-3 needs-validation" novalidate>
+
+  <p>Campaña: <? echo $filas['sub_campaña']; ?></p>
   <div class="col-md-4">
     <label for="validationCustom01" class="form-label">Nombre Asesor</label>
-    <input type="text" class="form-control" id="validationCustom01" value="Mark" required>
+    <input type="text" class="form-control" id="validationCustom01" value="<? echo $filas['nombre_asesor']; ?>" readonly>
     <div class="valid-feedback">
       Looks good!
     </div>
   </div>
   <div class="col-md-4">
     <label for="validationCustom02" class="form-label">DNI Asesor</label>
-    <input type="text" class="form-control" id="validationCustom02" value="Otto" required>
+    <input type="text" class="form-control" id="validationCustom02" value="<? echo $filas['documento']; ?>" readonly>
     <div class="valid-feedback">
       Looks good!
     </div>
@@ -71,8 +71,20 @@ echo $fila['id'];
   <div class="col-md-3">
     <label for="validationCustom04" class="form-label">Motivo</label>
     <select class="form-select" id="validationCustom04" required>
-      <option selected disabled value="">Selecciona el Motivo</option>
-      <option>...</option>
+    <option selected disabled value="">Selecciona el Motivo</option>
+    <?  
+      $sql_motivo = "SELECT * FROM motivo";
+      $res = mysqli_query($conexion,$sql_motivo);
+
+      while ($row = mysqli_fetch_array($res)) {
+    ?>
+    
+      <option value=""><? echo $row['motivo'] ?></option>
+      <?
+      }    
+    ?>
+
+      
     </select>
     <div class="invalid-feedback">
       Please select a valid state.

@@ -45,9 +45,9 @@ if ($rol != 3) {
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="../sup/index_sup.php">Inicio</a>
         </li>
-        <li class="nav-item">
+        <!-- <li class="nav-item">
           <a class="nav-link active" href="../sup/motivo_sup.php">Motivo</a>
-        </li> 
+        </li>  -->
         <!-- <li class="nav-item">
           <a class="nav-link active" href="../gtr/mantenimiento_gtr.php">Mantenimiento</a>
         </li> -->

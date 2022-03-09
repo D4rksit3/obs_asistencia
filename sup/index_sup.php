@@ -68,7 +68,7 @@ $fecha = date('d-m-Y');
   <?php 
       $conexion = mysqli_connect("localhost","root","root","obs_asitencia");
       
-      $sql = "SELECT * FROM reporte WHERE dni_sup='$user' AND fecha='$fecha'";
+      $sql = "SELECT * FROM reporte WHERE validar='0' AND fecha='$fecha'";
       $result = mysqli_query($conexion,$sql);
       
       //$varsesion
