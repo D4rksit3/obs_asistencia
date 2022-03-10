@@ -44,6 +44,7 @@ $fecha = date('d-m-Y');
 
             while ($filas = mysqli_fetch_array($res)) {
         ?>
+        <form action="">
     <tr>
       <th>
         
@@ -57,7 +58,7 @@ $fecha = date('d-m-Y');
       <div class="col-auto"><select class="form-select form-select-sm" aria-label=".form-select-sm example">
             <option selected>Selecciona Opcion</option>
             <option value="0">Asistio</option>
-            <option value="0">Falto</option></select></div>     
+            <option value="1">Falto</option></select></div>     
         </td>
         <td>
           <div class="col-auto">
@@ -66,6 +67,7 @@ $fecha = date('d-m-Y');
         </td>
       
     </tr>
+    </form>
     <?  
             }
         ?>

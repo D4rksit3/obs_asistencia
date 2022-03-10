@@ -24,10 +24,12 @@ if ($filas['id_rol'] == 1){
 
 }elseif ($filas['id_rol'] == 2){
     header('Location:gtr/index_gtr.php');
-}elseif ($filas['id_rol'] == 3) {
+
+}elseif ($filas['id_rol'] == 3)
+ {
     header('Location:sup/index_sup.php');
 }else {
-    echo "error";
+    echo "No tienes Autorizacion";
 }
 
 /* session_start();
