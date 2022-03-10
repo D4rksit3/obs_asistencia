@@ -17,7 +17,11 @@ if ($rol != 2) {
 
 
 ?>
-<?php include "../vistas/header_gtr.php";?>
+<meta charset="iso-8859-1" >
+<?php include "../vistas/header_gtr.php";
+header('Content-Type: text/html; charset=ISO-8859-1');  
+?>
+
 <div class="container">
 <?php
 
@@ -57,10 +61,12 @@ foreach ($lineas as $linea) {
         
       
 
+        $string = htmlentities($nombre_asesor, ENT_QUOTES,'ISO-8859-1');
+    if( !empty($key) ){
 
-    if( !empty($dni) ){
         
-            $checkemail_duplicidad = ("SELECT * FROM reporte WHERE key_id='$key' ");
+            $checkemail_duplicidad = ("SELECT key_id FROM reporte WHERE key_id='$key' ");
+            
             $ca_dupli = mysqli_query($con, $checkemail_duplicidad);
             $cant_duplicidad = mysqli_num_rows($ca_dupli);
         }   
@@ -70,7 +76,7 @@ foreach ($lineas as $linea) {
             
             
             
-            $insertarData = "INSERT INTO reporte (key_id, fecha, sub_campaña,dni_sup, supervisor, ejecutivo, documento, nombre_asesor, telefono, horario, condicion, modalidad, tipo_as) VALUES  ('$key', '$fecha', '$sub_campaña','$dni_sup', '$supervisor', '$ejecutivo', '$documento', '$nombre_asesor', '$telefono', '$horario', '$condicion', '$modalidad', '$tipo_as')";
+            $insertarData = "INSERT INTO reporte (key_id, fecha, sub_campaña,dni_sup, supervisor, ejecutivo, documento, nombre_asesor, telefono, horario, condicion, modalidad, tipo_as) VALUES  ('$key', '$fecha', '$sub_campaña','$dni_sup', '$supervisor', '$ejecutivo', '$documento', '$string', '$telefono', '$horario', '$condicion', '$modalidad', '$tipo_as')";
             $res = mysqli_query($con, $insertarData); 
 
             if ($res){?>
@@ -78,7 +84,7 @@ foreach ($lineas as $linea) {
                 <table class="table table-sm table-dark">
                 <tr class="bg-success" >            
                             
-                <td class="bg-success">Reporte subido  <?php echo $nombre_asesor ?></td>   
+                <td class="bg-success">Reporte subido  <?php echo $string ?></td>   
                
                </tr>
            </table>
@@ -86,10 +92,11 @@ foreach ($lineas as $linea) {
 
             <?php
             }else{?>
-                <table class="table table-sm table-dark">
-                    <tr class="bg-danger" >            
+            <meta charset="iso-8859-1" >
+                <table class="table table-sm table-danger">
+                    <tr class="bg-warning" >            
                                 
-                    <td class="bg-danger">Error en subir reporte del usuario  <?php echo $nombre_asesor ?></td>   
+                    <td class="bg-warning">Error en subir reporte del usuario  <?php echo $nombre_asesor ?></td>   
                 
                     </tr>
                 </table>
@@ -110,7 +117,7 @@ else{
     <table class="table table-sm table-dark">
     <tr class="bg-success" >
        
-       <td class="bg-danger">ya registrado <?php echo $nombre_asesor ?></td>
+       <td class="bg-danger">ya registrado <?php echo $string ?></td>
       
    </tr>
    </table>

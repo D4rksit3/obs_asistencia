@@ -37,40 +37,40 @@ $filas = mysqli_fetch_array($array);
 
 
 
-<form class="row g-3 needs-validation" novalidate>
+<form class="row g-3 needs-validation" action="validar_motivo.php?id=<? echo $id ?>" method="POST" novalidate>
 
   <p>Campaña: <? echo $filas['sub_campaña']; ?></p>
   <div class="col-md-4">
     <label for="validationCustom01" class="form-label">Nombre Asesor</label>
     <input type="text" class="form-control" id="validationCustom01" value="<? echo $filas['nombre_asesor']; ?>" readonly>
     <div class="valid-feedback">
-      Looks good!
+     
     </div>
   </div>
   <div class="col-md-4">
     <label for="validationCustom02" class="form-label">DNI Asesor</label>
     <input type="text" class="form-control" id="validationCustom02" value="<? echo $filas['documento']; ?>" readonly>
     <div class="valid-feedback">
-      Looks good!
+      
     </div>
   </div>
   <div class="col-md-4">
     <label for="validationCustomUsername" class="form-label">Telefono</label>
     <div class="input-group has-validation">
       <span class="input-group-text" id="inputGroupPrepend">+51</span>
-      <input type="text" class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
+      <input type="number" class="form-control" id="validationCustomUsername"  name="telefono" aria-describedby="inputGroupPrepend" required>
       <div class="invalid-feedback">
-        Please choose a username.
+        Por favor coloca el numero de telefono.
       </div>
     </div>
   </div>
   <div class="col-md-6">
     <label for="exampleFormControlTextarea1" class="form-label">Observacion</label>
-    <textarea class="form-control" id="exampleFormControlTextarea1" rows="1"></textarea>
+    <textarea class="form-control" id="exampleFormControlTextarea1" name="observacion" rows="1"></textarea>
   </div>
   <div class="col-md-3">
     <label for="validationCustom04" class="form-label">Motivo</label>
-    <select class="form-select" id="validationCustom04" required>
+    <select class="form-select" id="validationCustom04" name="motivo" required>
     <option selected disabled value="">Selecciona el Motivo</option>
     <?  
       $sql_motivo = "SELECT * FROM motivo";
@@ -79,7 +79,7 @@ $filas = mysqli_fetch_array($array);
       while ($row = mysqli_fetch_array($res)) {
     ?>
     
-      <option value=""><? echo $row['motivo'] ?></option>
+      <option value="<? echo $row['motivo'] ?>"><? echo $row['motivo'] ?></option>
       <?
       }    
     ?>
@@ -87,7 +87,7 @@ $filas = mysqli_fetch_array($array);
       
     </select>
     <div class="invalid-feedback">
-      Please select a valid state.
+      Por favor selecciona el motivo.
     </div>
   </div>
   <!-- <div class="col-md-3">
@@ -99,7 +99,7 @@ $filas = mysqli_fetch_array($array);
   </div> -->
 
   <div class="col-12">
-    <button class="btn btn-primary" type="submit">Enviar Motivo</button>
+    <button  class="btn btn-primary"  type="submit">Enviar Motivo</button>
   </div>
 </form>
 

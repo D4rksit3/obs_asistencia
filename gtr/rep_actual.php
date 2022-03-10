@@ -1,26 +1,28 @@
 <? 
-
 session_start();
 $varsesion = $_SESSION['usuario'];
 $rol = $_SESSION['id_rol'];
 $hora = date('d-m-Y h:i:s a', time());
 $fecha = date('d-m-Y');
 if($varsesion == null || $varsesion = ''){
-
-  
+  header('Location:../login.php');
+  die();
+}if ($rol != 2) {
   header('Location:../login.php');
   die();
 }
-if ($rol != 2) {
-  header('Location:../login.php');
-  die();
-}
-
-
 ?>
-
-
 <?php include "../vistas/header_gtr.php";?>
+
+<div class="container">
+
+<h1>Ausentismo Actual</h1>
+<p> Ausentes por Fecha: <? echo $fecha ?></p>
+
+
+
+
+
 
 <head>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -41,7 +43,7 @@ https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
 <body>
     
     <div class="">
-    <h1>Historico</h1>
+  
 
 
 
@@ -103,7 +105,7 @@ https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
     $(document).ready(function() {
         $('#customersTable').dataTable({
             "processing": true,
-            "ajax": "get_data.php",
+            "ajax": "get_fecha.php",
             "columns": [
                 /* {data: 'key_id'}, */
                 /*{data: 'sub_campaña'}, */
@@ -124,3 +126,5 @@ https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
         });
     });
     </script>
+
+</div>

@@ -57,6 +57,9 @@ https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
           <a class="nav-link active" aria-current="page" href="../gtr/index_gtr.php">Inicio</a>
         </li>
         <li class="nav-item">
+          <a class="nav-link active" href="../gtr/rep_actual.php">Reporte Actual</a>
+        </li>
+        <li class="nav-item">
           <a class="nav-link active" href="../gtr/mod_ingresos.php">Modificar Ingresos</a>
         </li>
 
@@ -90,3 +93,4 @@ https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
   </div>
 </nav>
 
+<br>

@@ -31,7 +31,7 @@ $fecha = date('d-m-Y');
   <thead>
     <tr>
       
-      <th scope="col">Nombre</th>
+      <th scope="col">Asesor</th>
       <th scope="col">Asistencia</th>
       <th scope="col">Confirmar</th>
     </tr>
@@ -44,7 +44,7 @@ $fecha = date('d-m-Y');
 
             while ($filas = mysqli_fetch_array($res)) {
         ?>
-        <form action="">
+        <form action="val_ingreso.php?id=<? echo $filas['id'] ?>" method="POST">
     <tr>
       <th>
         
@@ -55,10 +55,12 @@ $fecha = date('d-m-Y');
           
         </th>
       <td>
-      <div class="col-auto"><select class="form-select form-select-sm" aria-label=".form-select-sm example">
+      <div class="col-auto">
+        <select name="seleccion"  class="form-select form-select-sm" aria-label=".form-select-sm example">
             <option selected>Selecciona Opcion</option>
-            <option value="0">Asistio</option>
-            <option value="1">Falto</option></select></div>     
+            <option value="1">Asistio</option>
+            <option value="0">Falto</option>
+          </select></div>     
         </td>
         <td>
           <div class="col-auto">

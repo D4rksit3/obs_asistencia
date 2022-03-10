@@ -29,7 +29,7 @@ if ($filas['id_rol'] == 1){
  {
     header('Location:sup/index_sup.php');
 }else {
-    echo "No tienes Autorizacion";
+    header('Location: login.php');
 }
 
 /* session_start();
