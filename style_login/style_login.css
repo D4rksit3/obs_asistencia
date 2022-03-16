@@ -1,14 +1,15 @@
 .container {
-    width: 30%;
+    width: 38%;
     padding-right: var(--bs-gutter-x,.75rem);
-    padding-left: var(--bs-gutter-x,.75rem);
+    padding-left: var(--bs-gutter-x,.75rem); 
     
     top: 50%;
     left: 50%;
-    margin: 120px 0 98px 30%;
+    margin: 128px 0px 161px 33%;
 }
 
-@media screen and (max-width: 1000px) {
+
+@media screen and (max-width: 1300px) {
     .container {
         font-size: xx-large;
         width: 44%;

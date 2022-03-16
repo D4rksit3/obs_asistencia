@@ -52,11 +52,11 @@ foreach ($lineas as $linea) {
         $ejecutivo = !empty($datos[4])  ? ($datos[4]) : '';
         $documento = !empty($datos[5])  ? ($datos[5]) : '';
         $nombre_asesor = !empty($datos[6])  ? ($datos[6]) : '';
-        $telefono = !empty($datos[7])  ? ($datos[7]) : '';
-        $horario = !empty($datos[8])  ? ($datos[8]) : '';
-        $condicion = !empty($datos[9])  ? ($datos[9]) : '';
-        $modalidad = !empty($datos[10])  ? ($datos[10]) : '';
-        $tipo_as = !empty($datos[11])  ? ($datos[11]) : '';
+        $horario = !empty($datos[7])  ? ($datos[7]) : '';
+        $condicion = !empty($datos[8])  ? ($datos[8]) : '';
+        $modalidad = !empty($datos[9])  ? ($datos[9]) : '';
+        $tipo_as = !empty($datos[10])  ? ($datos[10]) : '';
+      
         
         
       
@@ -76,7 +76,7 @@ foreach ($lineas as $linea) {
             
             
             
-            $insertarData = "INSERT INTO reporte (key_id, fecha, sub_campaña,dni_sup, supervisor, ejecutivo, documento, nombre_asesor, telefono, horario, condicion, modalidad, tipo_as) VALUES  ('$key', '$fecha', '$sub_campaña','$dni_sup', '$supervisor', '$ejecutivo', '$documento', '$string', '$telefono', '$horario', '$condicion', '$modalidad', '$tipo_as')";
+            $insertarData = "INSERT INTO reporte (key_id, fecha, sub_campaña,dni_sup, supervisor, ejecutivo, documento, nombre_asesor, horario, condicion, modalidad, tipo_as) VALUES  ('$key', '$fecha', '$sub_campaña','$dni_sup', '$supervisor', '$ejecutivo', '$documento', '$string', '$horario', '$condicion', '$modalidad', '$tipo_as')";
             $res = mysqli_query($con, $insertarData); 
 
             if ($res){?>

@@ -11,7 +11,7 @@ $con = mysqli_connect($hostname, $username, $password, $database) or die("Error 
 $hora = date('d-m-Y h:i:s a', time());
 $fecha = date('d-m-Y');
 // fetch records
-$sql = "SELECT * FROM reporte WHERE fecha='$fecha'";
+$sql = "SELECT * FROM reporte WHERE fecha='$fecha' AND validar='0'";
 $result = mysqli_query($con, $sql);
 
 while($row = mysqli_fetch_assoc($result)) {

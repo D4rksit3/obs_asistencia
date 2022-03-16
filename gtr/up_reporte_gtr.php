@@ -32,7 +32,9 @@ if ($rol != 2) {
         <!-- Interactuar excel con php/mysql-->
 
             <form action="../gtr/validar_excel.php" method="POST" enctype="multipart/form-data">    
+            <a href="dataAusente.csv">Descargar Formato</a>
                 <div class="form-group">
+                  
                     <label for="exampleFormControlFile1">Seleccionar Archivo (Solo .csv)</label>
                     <br>
                     <br>

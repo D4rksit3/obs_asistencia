@@ -41,7 +41,7 @@ https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
 <body>
     
     <div class="">
-    <h1>Historico</h1>
+    <h1>Historico de Faltas</h1>
 
 
 
@@ -55,10 +55,11 @@ https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
                 <th scope="col">Ejecutivo</th>
                 <th scope="col">DNI</th>
                 <th scope="col">Asesor</th>
-                <th scope="col">Telefono</th>
+                
                 <th scope="col">Horario</th>
                 <th scope="col">Condicion</th>
                 <th scope="col">Modalidad</th> 
+                <th scope="col">Telefono</th>
                 <th scope="col">Motivo</th> 
                 <th scope="col">Observacion VC</th>
 
@@ -112,10 +113,10 @@ https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
                 {data: 'ejecutivo'},
                 {data: 'documento'},
                 {data: 'nombre_asesor'},
-                {data: 'telefono'},
                 {data: 'horario'},
                 {data: 'condicion'},
                 {data: 'modalidad'},
+                {data: 'telefono'},
                 {data: 'motivo'},
                 {data: 'observacion_vc'},
 

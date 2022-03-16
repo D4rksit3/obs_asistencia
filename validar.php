@@ -19,7 +19,7 @@ $filas = mysqli_fetch_array($resultado);
 
 if ($filas['id_rol'] == 1){
 
-    header('location: admin.php');
+    header('location: adm/admin.php');
 
 
 }elseif ($filas['id_rol'] == 2){
