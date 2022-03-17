@@ -28,8 +28,8 @@
             <td><? echo $array['motivo'] ?></td>
             
             <td>
-            <a type="submit" href="edit.php?id=<? echo $array['id'] ?>" class="btn btn-dark">Editar</a>
-            <a type="boton_del" href="del.php?id=<? echo $array['id'] ?>" class="btn btn-dark">Eliminar</a>
+            <a type="submit" href="ed_mot.php?id=<? echo $array['id_motivo'] ?>" class="btn btn-dark">Editar</a>
+            <a type="boton_del" href="del_mot.php?id=<? echo $array['id_motivo'] ?>" class="btn btn-dark">Eliminar</a>
             </td>
             </tr>
             <?
