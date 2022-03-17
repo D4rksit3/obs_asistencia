@@ -106,7 +106,7 @@ https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
   </li>
 
   <li class="nav-item">
-    <a class="nav-link" href="#">EDITAR MOTIVO</a>
+    <a class="nav-link" href="./edit_motivo.php">EDITAR MOTIVO</a>
   </li>
   <!-- <li class="nav-item">
     <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>

@@ -28,7 +28,7 @@
     <label for="exampleDataList" class="form-label">Selecciona Rol</label>
     <div class="col-sm-4">
     <select class="form-select" name="rol" aria-label="Default select example">
-    <option selected>SELECCIONAR</option>
+    <option disabled selected>SELECCIONAR</option>
    
     <!-- <option value="1">One</option> -->
     <option value="2">GTR</option>
