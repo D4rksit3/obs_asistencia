@@ -17,7 +17,10 @@
 <form action="validar.php" method="POST">
     
 <div class="container">
+  
+
   <div class="mb-3">
+  
     <label for="exampleInputEmail1" class="form-label">Nombre de usuario</label>
     <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="usuario">
     

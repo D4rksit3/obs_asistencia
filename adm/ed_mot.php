@@ -43,6 +43,8 @@ if (isset($_POST['boton'])) {
         echo '<div class="alert alert-success" role="alert">
  Motivo "'.$nombre.'" Editado correctamente!
 </div>';
+sleep(1);
+header("LOCATION: edit_motivo.php");
     }else {
         echo '<div class="alert alert-danger" role="alert">
   Error en actualizar!
@@ -50,7 +52,7 @@ if (isset($_POST['boton'])) {
     }
     
 
-    /* header("LOCATION: edit_user.php"); */
+    /*  */
 }else {
     
 }

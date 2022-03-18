@@ -25,7 +25,7 @@ $fecha = date('d-m-Y');
 
 <div class="container">
 
-<h1> Agregar Motivo </h1>
+<h1> Editar Motivo </h1>
 
 <?  
 $data = "SELECT * FROM reporte WHERE id='$id'";
@@ -37,7 +37,7 @@ $filas = mysqli_fetch_array($array);
 
 
 
-<form class="row g-3 needs-validation" action="validar_motivo.php?id=<? echo $id ?>" method="POST" novalidate>
+<form class="row g-3 needs-validation" action="validar_act.php?id=<? echo $id ?>" method="POST" novalidate>
 
   <p>Campaña: <? echo $filas['sub_campaña']; ?></p>
   <div class="col-md-4">
@@ -99,7 +99,7 @@ $filas = mysqli_fetch_array($array);
   </div> -->
 
   <div class="col-12">
-    <button  class="btn btn-primary"  type="submit">Enviar Motivo</button>
+    <button  class="btn btn-primary"  type="submit">Editar Motivo</button>
   </div>
 </form>
 

@@ -26,7 +26,7 @@ $fecha = date('d-m-Y');
 }
 
 </style>
-<h1>Faltantes</h1>
+<h1>Modificar Asistencia</h1>
 <table class="table">
   <thead>
     
@@ -40,12 +40,12 @@ $fecha = date('d-m-Y');
   <tbody>
   <?  
             $conn = mysqli_connect("localhost","root","root","obs_asitencia");
-            $sql = "SELECT * FROM reporte WHERE validar='0' and fecha='$fecha'";
+            $sql = "SELECT * FROM reporte WHERE validar='2' and fecha='$fecha'";
             $res = mysqli_query($conn,$sql);
 
             while ($filas = mysqli_fetch_array($res)) {
         ?>
-        <form action="val_ingreso.php?id=<? echo $filas['id'] ?>" method="POST">
+        <form action="val_asistencia.php?id=<? echo $filas['id'] ?>" method="POST">
     <tr>
       <th>
         

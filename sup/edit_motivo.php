@@ -21,24 +21,15 @@ $fecha = date('d-m-Y');
     $objeto = new Conexion();
     $conexion = $objeto->Conectar();
     
-    $sql = " SELECT * FROM reporte WHERE validar='0' AND fecha='$fecha'";
+    $sql = " SELECT * FROM reporte WHERE validar='1' AND fecha='$fecha'";
     $sql .= " ORDER BY id ";
     $resultado = $conexion->prepare($sql);
     $resultado->execute();
     $empleados=$resultado->fetchAll(PDO::FETCH_ASSOC);
 
 ?>
-<!-- <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
 <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.2.2/css/buttons.dataTables.min.css">
- -->
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/css/bootstrap.min.css
-https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/css/bootstrap.min.css
-https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
-<link rel="stylesheet" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css">
-<script src="style_login/jquery-3.6.0.js" type="text/javascript"></script>
 
 
 
@@ -50,22 +41,19 @@ https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
 <body>
        
     <div>
-      <br>
-      <p>Reporte por fecha: <? echo $fecha; ?></p>
-       
-
+        
+        <br>
+        <p>Motivos a la fecha: <? echo $fecha; ?></p>
         <table id="example" class="display nowrap" style="width:100%">
         <thead>
             <tr>
-                <th>Sub campaña</th>
                 <th>Supervisor</th>
-           
-                <th>DNI</th>
-                <th>Asesor</th>
-                <th>Horario</th>
-                <th>Condicion</th>
-                <th>Modalidad</th>
+         
+                <th>Nombre Asesor</th>
+                <th>Telefono</th>
                 <th>Motivo</th>
+                <th>Observacion</th>
+                <th>Editar</th>
             </tr>
         </thead>
         <tbody>
@@ -74,18 +62,14 @@ https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
         ?>
     
             <tr>
-              <td><?php echo $empleados['sub_campaña'];?></td>
                 <td><?php echo $empleados['supervisor'];?></td>
                 
-                <td><?php echo $empleados['documento'];?></td>
                 <td><?php echo $empleados['nombre_asesor'];?></td>
-                <td><?php echo $empleados['horario'];?></td>
-                <td><?php echo $empleados['condicion'];?></td>
-                <td><?php echo $empleados['modalidad'];?></td>
-                <td>
-          <a href="motivo_sup.php?id=<?php echo $empleados['id']; ?>" class="btn btn-warning">Motivo</a>
-          
-        </td>
+                <td><?php echo $empleados['telefono'];?></td>
+                <td><?php echo $empleados['motivo'];?></td>
+                <td><?php echo $empleados['observacion_vc'];?></td>
+                <td>     <a href="act_motivo.php?id=<?php echo $empleados['id']; ?>" class="btn btn-warning">Editar</a>
+          </td>
             </tr>
          
             <?php } ?>
@@ -96,7 +80,7 @@ https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
 
     </div>
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-    <script src="js/jquery.dataTables.min.js"></script>
+<script src="js/jquery.dataTables.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
  <script src="https://cdn.datatables.net/buttons/2.2.2/js/dataTables.buttons.min.js"></script>
@@ -106,7 +90,8 @@ https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
 <script>
     $(document).ready(function() {
     $('#example').DataTable( {
-     
+       /*  dom: 'Bfrtip',
+        buttons: [ 'copy', 'csv', 'excel', 'pdf', 'print' ] */
     } );
 } );
 </script>
@@ -115,18 +100,5 @@ https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
 
 
 </body>
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
